@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+        
+            background:black url(./back.jpg) center center/cover no-repeat;    
+        }
+        h1{
+            text-align: center;
+        }
+input.fm {
+    
+    font-size: 120%;
+    color: #5a5854;
+    background-color: #f2f2f2;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 5px 5px 5px 30px;
+    background-repeat: no-repeat;
+    /* background-position: 8px 9px; */
+    /* display: block; */
+    /* float: right; */
+    /* margin-left:30PX; */
+    /* position: absolute; */
+    /* margin-bottom: 10px; */
+    margin-top: 0px;}
+input:focus {
+background-color: #ffffff;
+border: 1px solid #b1e1e4;}
+        
+        #main{
+            float: right;
+            margin-right: 70px;
+            margin-top: 100px;
+            padding: 20px;
+            padding-left: 25px;
+            width: 300px;
+             height: auto;
+            background-color:white;
+            border-radius:0px 50px;
+            /* border: 2px solid gray; */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 8px 20px 0 rgba(0, 0, 0, 0.50);
+        }
+        #main:hover{
+/* border: 5px solid black; */
+/* transition: 1.1s; */
+}
+            
+        
+        #Submit{
+             /* margin-left: 22px; */
+            margin-bottom: 30px;
+            background-color: black;
+            width: 100%;
+        height: 35px;
+            color: white;
+            font-size: large;
+            border-radius: 5px;
+        }
+      .mf{
+          text-align: left;
+      }
+      #country{
+            font-size: 100%;
+            color: #5a5854;
+             background-color: #f2f2f2;
+            border: 1px solid #bdbdbd;
+             border-radius: 5px;
+             /* width: 265px; */
+             /* margin-left: 30px; */
+              padding: 5px 5px 5px 5px;
+
+      }
+    .fa-user{
+        margin-top: 00px; 
+          font-size: 30px;
+          /* background-color: royalblue; */
+          position: absolute;
+          float: left;
+    }
+    .fa-lock{
+        font-size: 30PX;
+
+    }
+    .fa-envelope{
+        font-size: 30px;
+       
+    }
+    
+     .fa-user, .fa-lock , .fa-envelope{
+             font-size: 25px;
+           /* background-color: white; */
+        padding: 5px;
+         color: black;
+         float: left;
+         position:  absolute;
+      }
+      .div{
+          /* border: 1px solid red; */
+          display: inline-block;
+          width: 300px;
+          height: 40px;
+          margin: auto;
+          margin-bottom: 10px;
+          position: relative;
+      }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Registration</h1>
+        <div style="text-align: center ;">
+        <div class="div">
+    <i class="fa-solid fa-user"></i>
+    <input id="firstname" type="text" placeholder="First Name" class="fm">
+    </div>
+    <div class="div">
+        <i class="fa-solid fa-user"></i>
+        <input id="lastname" type="text" placeholder="Last Name" class="fm">
+        </div>
+    <div class="div"><i class="fa-regular fa-envelope" ></i>
+
+        <input id="email" type="email"  name="email" placeholder="Email Adress" class="fm"><br>
+    </div>
+    <div class="div">
+        <i class="fa-solid fa-lock "></i>
+        <input id="password" type="password" name="password" placeholder="Password" class="fm" ><br>
+    </div>
+ 
+
+        <span class="title">Gender:</span>
+        <input type="radio" name="gender" id="male" value="M" />
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="F" />
+        <label for="female">Female</label><br /> <br>
+      
+        <input type="submit" onclick="signup()" value="Signup" id="Submit">
+    </div>
+    </div>
+    
+<script>
+   
+
+    var username = document.getElementById('username')
+    var email = document.getElementById('email')
+    var password = document.getElementById('password')
+
+    function Sign() {
+
+
+            localStorage.setItem('user', username.value);
+            localStorage.setItem('email', email.value);
+            localStorage.setItem('password', password.value);
+            window.location.href = 'login.html'
+        }
+
+
+        
+function signup() {
+        var firstName = document.getElementById("firstname").value
+     var lastName = document.getElementById("lastname").value
+     var email = document.getElementById("email").value
+     var password = document.getElementById("password").value
+   
+      if (firstName == "" || lastName == "" || email == "" || password == "" ){
+        alert("please fill all blanks")
+      }else{
+        localStorage.setItem("firstname" , firstName)
+      localStorage.setItem("lastname" , lastName)
+      localStorage.setItem("email" , email)
+      localStorage.setItem("password" , password)
+        window.location.href = "login.html"
+      }
+      
+     } 
+</script>
+
+
+   
+</body>
+</html>
